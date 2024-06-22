@@ -46,7 +46,7 @@ void Queue::printQueue() const
 	cout << "End of Queue" << endl << endl;
 }
 
-ostream& operator<<(ostream& output, const Queue& q) // output equal to cout. friend function. operator overloading.
+ostream& operator<<(ostream& output, const Queue& q) 
 {
 	Account* temp = q.head;
 	while (temp)
