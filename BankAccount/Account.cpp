@@ -1,21 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Account.h"
 
-int Account::accountIdGenerator = 1; // initialization of a static variable 
+int Account::accountIdGenerator = 1; 
 
 Account::Account(const char* name, double money)
 {
-	strncpy(this->name, name, sizeof(this->name) - 1); //מעתיקה את המחרוזת לתחילת המערך
+	strncpy(this->name, name, sizeof(this->name) - 1); 
 	this->name[sizeof(this->name) - 1] = '\0';
 	this->money = money;
 	accountId = accountIdGenerator;
 	accountIdGenerator++;
-	next = NULL; // next value in the linked list = NULL
+	next = NULL; 
 }
 
 char *Account::GetName() const
 {
-	return (char*)name; // name = char array, casting to char*
+	return (char*)name; 
 }
 
 void Account::SetName(const char* new_name)
@@ -24,9 +24,9 @@ void Account::SetName(const char* new_name)
 	this->name[sizeof(this->name) - 1] = '\0';
 }
 
-void Account::SetNext(Account& next_account) //reference
+void Account::SetNext(Account& next_account) 
 {
-	this->next = &next_account; // adress
+	this->next = &next_account; 
 }
 
 Account* Account::GetNext() const
